@@ -1,0 +1,10 @@
+{
+    "editor.detectIndentation": false,
+    "window.zoomLevel": 0,    
+    "cucumber.features": [
+        "cypress/integration/features/**/*.feature"
+    ],
+    "cucumber.glue": [
+        "cypress/stepDefinitions/**/*.js"
+    ]
+}
