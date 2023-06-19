@@ -41,7 +41,8 @@ module.exports = defineConfig({
   viewportWidth: 1280,
   viewportHeight: 1024,
   chromeWebSecurity: false,
-  e2e: {    
+  e2e: { 
+    testIsolation: false,    
     specPattern: "cypress/integration/**/*.feature",
     setupNodeEvents,
   },
