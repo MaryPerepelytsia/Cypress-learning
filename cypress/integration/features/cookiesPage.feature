@@ -4,8 +4,8 @@ Scenario: Verify elements'Cookies' page
     When I navigate to 'Home' page
     Then I should see 'Cookies' page
     And I should see 'your flower community' icon
-    And I should see 'Uw cookievoorkeuren' page header
-    And I should see 'Cookies' rules
+    And I should see 'Your cookie preferences' page header
+    And I should see 'Cookies' rules text
     And I should see 'Accept' button
     And I should see 'Not Accept' button
 

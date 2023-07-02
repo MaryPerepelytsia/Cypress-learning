@@ -3,6 +3,17 @@ import HomePagePage from "../pageObjects/homePage_page.js";
 
 const homePagePage = new HomePagePage();
 
+import CookiesPage_selectors from "../selectors/cookiesPage_selectors";
+const cookiesPage_selectors = new CookiesPage_selectors();
+
+let cookiesPage_data; //Used as link to the fixxtures data.
+
+before(() => {
+    cy.fixture("/cookiesPage.json").then((cookiesDataFile) => {
+      cookiesPage_data = cookiesDataFile;
+    });
+  });  
+
 before(() => {
 
     cy.visit('https://bloomenty.com/nl/home');
@@ -11,11 +22,11 @@ before(() => {
   });
 
 When("I navigate to 'Home' page", () => {
-  cy.visit("https://bloomenty.com/nl/home");
+  cy.visit(cookiesPage_data.homePageURL);
 });
 
 When("I navigate to 'Vacancies' page", () => {
-    cy.visit("https://bloomenty.com/nl/vacancies");
+    cy.visit(cookiesPage_data.vacanciesPageURL);
   });
 
 Then("I should see 'Cookies' page", () => {
@@ -23,23 +34,23 @@ Then("I should see 'Cookies' page", () => {
 });
 
 Then("I should see 'your flower community' icon", () => {
-  cy.get(".header > .logo > .slogan").should("be.visible")
+  cy.get(cookiesPage_selectors.yourFlowerCommunityIcon).should("be.visible")
 });
 
-Then("I should see 'Uw cookievoorkeuren' page header", () => {
-  cy.get("#cookies > .modal-container > .modal-title").should("be.visible")
+Then("I should see 'Your cookie preferences' page header", () => {
+  cy.get(cookiesPage_selectors.yourCookiePreferencesPageHeader).should("be.visible")
 });
 
-Then("I should see 'Cookies' rules", () => {
-  cy.get(".modal-body").should("be.visible")
+Then("I should see 'Cookies' rules text", () => {
+  cy.get(cookiesPage_selectors.cookiesRulesText).should("be.visible")
 });
 
 Then("I should see 'Accept' button", () => {
-  cy.get("#confirmCookie").should("be.visible")
+  cy.get(cookiesPage_selectors.acceptButton).should("be.visible")
 });
 
 Then("I should see 'Not Accept' button", () => {
-  cy.get("#rejectCookie").should("be.visible")
+  cy.get(cookiesPage_selectors.notAcceptButton).should("be.visible")
 });
 
 When("I should see that 'Cookies' page is displayed", () => {
@@ -51,23 +62,23 @@ When("I should see that 'Cookies' page is Not displayed", () => {
   });
   
 When("I should see that 'Cookies rules' is opened", () => {
-    cy.get("#cookie-files > .accordion-content > div").should("be.visible")
+    cy.get(cookiesPage_selectors.cookiesRules).should("be.visible")
   });
   
 When("I select 'Cookie page' link on the 'Cookies' page", () => {
-    cy.get(".modal-body > a").invoke('removeAttr', 'target').click();
+    cy.get(cookiesPage_selectors.cookiePageLink).invoke('removeAttr', 'target').click();
   });
 
 When("I press 'Cancel' button on the 'Cookies' page", () => {
-    cy.get("#rejectCookie").click();
+    cy.get(cookiesPage_selectors.cancelButtonOnCookiesPage).click();
   });
 
 When("I press 'Accept' button on the 'Cookies' page", () => {
-    cy.get("#confirmCookie").click();
+    cy.get(cookiesPage_selectors.acceptButtonOnCookiesPage).click();
   });
  
 When("I select 'Vacancies' sub-menu", () => {
-    cy.get("/html/body/div/header/div/div[2]/nav/span[1]/ul/li[1]").click();
+    cy.get(cookiesPage_selectors.vacanciesSubMenu).click();
   });
   
 When("I clear all Cookies", () => {
@@ -91,12 +102,12 @@ When("I press 'Forward' button in the Browser", () => {
   });
 
 Then("I should see that 'CookiesPage' link is correct", () => {
-    cy.get(".modal-body > a")
+    cy.get(cookiesPage_selectors.cookiePageLink)
     .should("have.attr", "href", "/nl/official-docs#cookie-files")
   });
 
   When("I press 'Login' button on the 'Home' page", () => {
-    cy.get(".nav-bar > .login-btn").click();
+    cy.get(cookiesPage_selectors.loginButtonOnHomePage).click();
   });
   
 Then("I should see {string} on the 'Cookies' page", (itemCookiesPage) => {
