@@ -103,3 +103,7 @@ Then("I should see {string} on the 'Cookies' page", (itemCookiesPage) => {
     cy.get("itemCookiesPage").should("be.visible");
   });
 
+// When('When I press {string} button in the Browser', (s) => {
+//   // Write code here that turns the phrase above into concrete actions
+// })
+

@@ -1,0 +1,10 @@
+
+{
+    "emailInputCorrectData" : "testqa@gmail.com",
+    "noSymbolsBeforeAt" : "@gmail.com",
+    "noSymbolsAfterDot" : "testqa@gmail.",
+    "noDotEmailData" : "testqa@gmailcom",
+    "noAtEmailData" : "testqagmail.com"
+}
+
+ 

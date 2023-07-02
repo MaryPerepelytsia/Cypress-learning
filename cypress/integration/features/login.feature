@@ -20,3 +20,32 @@ Scenario: Verify login with valid credentials
     And I press 'Login' button on the 'Login' page
     Then I should see that 'My profile' title is displayed
 
+Scenario: Verify 'No symbols before At' input data for 'Email' field
+    When I clear all Cookies
+    And I navigate to 'Login' page
+    And I press 'Accept' button on the 'Cookies' page
+    And I fill in the 'Email' field on the 'Login' page with 'No symbols before At' data 
+    And I fill in 'Password' field
+    And I press 'Login' button on the 'Login' page
+    Then I should see that 'Ongeldig e-mailadres of wachtwoord!' alert is displayed
+
+Scenario: Verify 'No symbols after Dot' input data for 'Email' field
+    When I fill in the 'Email' field on the 'Login' page with 'No symbols after Dot' data 
+    And I fill in 'Password' field
+    And I press 'Login' button on the 'Login' page
+    Then I should see that 'Ongeldig e-mailadres of wachtwoord!' alert is displayed
+
+Scenario: Verify 'No Dot' input data for 'Email' field
+    When I fill in the 'Email' field on the 'Login' page with 'No Dot' data 
+    And I fill in 'Password' field
+    And I press 'Login' button on the 'Login' page
+    Then I should see that 'Ongeldig e-mailadres of wachtwoord!' alert is displayed
+
+Scenario: Verify 'No At' input data for 'Email' field
+    When I fill in the 'Email' field on the 'Login' page with 'No Dot' data 
+    And I fill in 'Password' field
+    And I press 'Login' button on the 'Login' page
+    Then I should see that 'Ongeldig e-mailadres of wachtwoord!' alert is displayed
+
+
+
