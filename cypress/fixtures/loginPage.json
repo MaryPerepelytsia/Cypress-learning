@@ -1,10 +1,21 @@
 
 {
-    "emailInputCorrectData" : "testqa@gmail.com",
-    "noSymbolsBeforeAt" : "@gmail.com",
-    "noSymbolsAfterDot" : "testqa@gmail.",
-    "noDotEmailData" : "testqa@gmailcom",
-    "noAtEmailData" : "testqagmail.com"
+    "URLs": {
+        "loginPageURL": "https://bloomenty.com/nl/myaccount/login"
+    },
+    "emailData": {
+        "emailInputCorrectData": "testqa@gmail.com",
+        "emailInputIncorrectData": {
+            "noSymbolsBeforeAt": "@gmail.com",
+            "noSymbolsAfterDot": "testqa@gmail.",
+            "noDotEmailData": "testqa@gmailcom",
+            "noAtEmailData": "testqagmail.com"
+        }
+    }
+    
+    
+
+    
 }
 
  

@@ -1,4 +1,4 @@
-Feature: Verification of Bloomenty Cookies page
+Feature: Verification of Bloomenty Login page
 
 Scenario: Verify 'Login' button from the Home page
     When I navigate to 'Home' page
@@ -12,7 +12,7 @@ Scenario: Verify 'Login' button from the Home page
 
 Scenario: Verify login with empty credentials
     When I press 'Login' button on the 'Login' page
-    Then I should see that 'Ongeldig e-mailadres of wachtwoord!' alert is displayed
+    Then I should see that 'Invalid email address or password!' alert is displayed
 
 Scenario: Verify 'No symbols before At' input data for 'Email' field
     # When I clear all Cookies
@@ -21,25 +21,25 @@ Scenario: Verify 'No symbols before At' input data for 'Email' field
     When I fill in the 'Email' field on the 'Login' page with 'No symbols before At' data
     And I fill in 'Password' field
     And I press 'Login' button on the 'Login' page
-    Then I should see that 'Ongeldig e-mailadres of wachtwoord!' alert is displayed
+    Then I should see that 'Invalid email address or password!' alert is displayed
 
 Scenario: Verify 'No symbols after Dot' input data for 'Email' field
     When I fill in the 'Email' field on the 'Login' page with 'No symbols after Dot' data 
     And I fill in 'Password' field
     And I press 'Login' button on the 'Login' page
-    Then I should see that 'Ongeldig e-mailadres of wachtwoord!' alert is displayed
+    Then I should see that 'Invalid email address or password!' alert is displayed
 
 Scenario: Verify 'No Dot' input data for 'Email' field
     When I fill in the 'Email' field on the 'Login' page with 'No Dot' data 
     And I fill in 'Password' field
     And I press 'Login' button on the 'Login' page
-    Then I should see that 'Ongeldig e-mailadres of wachtwoord!' alert is displayed
+    Then I should see that 'Invalid email address or password!' alert is displayed
 
 Scenario: Verify 'No At' input data for 'Email' field
     When I fill in the 'Email' field on the 'Login' page with 'No Dot' data 
     And I fill in 'Password' field
     And I press 'Login' button on the 'Login' page
-    Then I should see that 'Ongeldig e-mailadres of wachtwoord!' alert is displayed
+    Then I should see that 'Invalid email address or password!' alert is displayed
 
 Scenario: Verify login with valid credentials
     When I fill in 'Login' field

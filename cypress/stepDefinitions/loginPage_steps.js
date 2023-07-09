@@ -23,7 +23,7 @@ Then("I should see that 'Login' page is displayed", () => {
   });
 
 When("I navigate to 'Login' page", () => {
-    cy.visit('https://bloomenty.com/nl/myaccount/login');
+    cy.visit(loginPage_data.URLs.loginPageURL);
   });
 
 Then("I should see that 'Login' page URL is correct", () => {
@@ -42,12 +42,12 @@ When("I press 'Login' button on the 'Login' page", () => {
     cy.get(loginPage_selectors.loginButton).click();
   });
 
-Then("I should see that 'Ongeldig e-mailadres of wachtwoord!' alert is displayed", () => {
-    cy.get(".alert").should("be.visible")
+Then("I should see that 'Invalid email address or password!' alert is displayed", () => {
+    cy.get(loginPage_selectors.invalidEmailAddressOrPassword).should("be.visible")
   });
 
 When("I fill in 'Login' field", () => {
-    cy.get(loginPage_selectors.emailInputField).clear().type(loginPage_data.emailInputCorrectData);
+    cy.get(loginPage_selectors.emailInputField).clear().type(loginPage_data.emailData.emailInputCorrectData);
   });
 
 When("I fill in 'Password' field", () => {
@@ -59,19 +59,19 @@ Then("I should see that 'My profile' title is displayed", () => {
   });
 
 When("I fill in the 'Email' field on the 'Login' page with 'No symbols before At' data", () => {
-    cy.get(loginPage_selectors.emailInputField).clear().type(loginPage_data.noSymbolsBeforeAt);
+    cy.get(loginPage_selectors.emailInputField).clear().type(loginPage_data.emailData.emailInputIncorrectData.noSymbolsBeforeAt);
   });
 
 When("I fill in the 'Email' field on the 'Login' page with 'No symbols after Dot' data", () => {
-    cy.get(loginPage_selectors.emailInputField).clear().type(loginPage_data.noSymbolsAfterDot);
+    cy.get(loginPage_selectors.emailInputField).clear().type(loginPage_data.emailData.emailInputIncorrectData.noSymbolsAfterDot);
   });
 
 When("I fill in the 'Email' field on the 'Login' page with 'No Dot' data", () => {
-    cy.get(loginPage_selectors.emailInputField).clear().type(loginPage_data.noDotEmailData);
+    cy.get(loginPage_selectors.emailInputField).clear().type(loginPage_data.emailData.emailInputIncorrectData.noDotEmailData);
   });
 
 When("I fill in the 'Email' field on the 'Login' page with 'No At' data", () => {
-    cy.get(loginPage_selectors.emailInputField).clear().type(loginPage_data.noAtEmailData);
+    cy.get(loginPage_selectors.emailInputField).clear().type(loginPage_data.emailData.emailInputIncorrectData.noAtEmailData);
   });
 
 
