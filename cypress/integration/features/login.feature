@@ -47,4 +47,10 @@ Scenario: Verify login with valid credentials
     And I press 'Login' button on the 'Login' page
     Then I should see that 'My profile' title is displayed
 
+# Scenario: Verify "Capital letters" input data for 'Email' field
+#     When I fill in the 'Email' field on the 'Login' page with 'Capital letters' data 
+#     And I fill in 'Password' field
+#     And I press 'Login' button on the 'Login' page
+#     Then I should see that 'My profile' title is displayed
+
 

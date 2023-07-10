@@ -4,7 +4,11 @@
         "loginPageURL": "https://bloomenty.com/nl/myaccount/login"
     },
     "emailData": {
-        "emailInputCorrectData": "testqa@gmail.com",
+        "emailInputCorrectData": {
+            "correctEmail": "testqa@gmail.com",
+            "capitalLetters": "TESTQA@GMAIL.COM"
+        },
+        
         "emailInputIncorrectData": {
             "noSymbolsBeforeAt": "@gmail.com",
             "noSymbolsAfterDot": "testqa@gmail.",
