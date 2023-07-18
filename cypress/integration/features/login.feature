@@ -41,6 +41,36 @@ Scenario: Verify 'No At' input data for 'Email' field
     And I press 'Login' button on the 'Login' page
     Then I should see that 'Invalid email address or password!' alert is displayed
 
+Scenario: Verify 'Space before Password' input data for 'Password' field
+    When I fill in the 'Email' field on the 'Login' page with 'Correct' data 
+    And I fill in 'Password' field on the 'Login' page with 'Space before Password' data
+    And I press 'Login' button on the 'Login' page
+    Then I should see that 'Invalid email address or password!' alert is displayed 
+
+Scenario: Verify 'Space after Password' input data for 'Password' field
+    When I fill in the 'Email' field on the 'Login' page with 'Correct' data 
+    And I fill in 'Password' field on the 'Login' page with 'Space after Password' data
+    And I press 'Login' button on the 'Login' page
+    Then I should see that 'Invalid email address or password!' alert is displayed  
+
+Scenario: Verify 'Password in CapsLock' input data for 'Password' field
+    When I fill in the 'Email' field on the 'Login' page with 'Correct' data 
+    And I fill in 'Password' field on the 'Login' page with 'Password in CapsLock' data
+    And I press 'Login' button on the 'Login' page
+    Then I should see that 'Invalid email address or password!' alert is displayed
+
+Scenario: Verify 'Password without last symbol' input data for 'Password' field
+    When I fill in the 'Email' field on the 'Login' page with 'Correct' data 
+    And I fill in 'Password' field on the 'Login' page with 'Password without last symbol' data
+    And I press 'Login' button on the 'Login' page
+    Then I should see that 'Invalid email address or password!' alert is displayed  
+
+Scenario: Verify 'Password without first symbol' input data for 'Password' field
+    When I fill in the 'Email' field on the 'Login' page with 'Correct' data 
+    And I fill in 'Password' field on the 'Login' page with 'Password without first symbol' data
+    And I press 'Login' button on the 'Login' page
+    Then I should see that 'Invalid email address or password!' alert is displayed 
+
 Scenario: Verify login with valid credentials
     When I fill in the 'Email' field on the 'Login' page with 'Correct' data
     And I fill in 'Password' field

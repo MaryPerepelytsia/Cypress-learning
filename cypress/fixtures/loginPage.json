@@ -6,7 +6,7 @@
     "emailData": {
         "emailInputCorrectData": {
             "correctEmail": "testqa@gmail.com",
-            "capitalLetters": "TESTQA@GMAIL.COM"
+            "capitalLettersEmail": "TESTQA@GMAIL.COM"
         },
         
         "emailInputIncorrectData": {
@@ -15,7 +15,15 @@
             "noDotEmailData": "testqa@gmailcom",
             "noAtEmailData": "testqagmail.com"
         }
+    },
+    "passwordData": {
+        "passwordInputCorrectData": "12345678",
+        "passwordInputIncorrectData": {
+            "spaceBeforePassword": " 12345678",
+            "spaceAfterPassword": "12345678 ",
+            "passwordInCapsLock": "!@#$%^&*",
+            "passwordWithoutLastSymbol": "1234567",
+            "passwordWithoutFirstSymbol": "2345678"
+        }
     }
 }
-
- 
