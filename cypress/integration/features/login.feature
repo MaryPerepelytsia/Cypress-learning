@@ -47,10 +47,16 @@ Scenario: Verify login with valid credentials
     And I press 'Login' button on the 'Login' page
     Then I should see that 'My profile' title is displayed
 
-# Scenario: Verify "Capital letters" input data for 'Email' field
-#     When I fill in the 'Email' field on the 'Login' page with 'Capital letters' data 
-#     And I fill in 'Password' field
-#     And I press 'Login' button on the 'Login' page
-#     Then I should see that 'My profile' title is displayed
+Scenario: Verify "Capital letters" input data for 'Email' field
+#   When I press 'Log out' button on the 'My profile' page
+    Given I clear all Cookies
+    And I refresh the page
+    And I navigate to 'Login' page
+    And I wait for 3 seconds
+    And I click 'Accept' button
+    When I fill in the 'Email' field on the 'Login' page with 'Capital letters' data
+    And I fill in 'Password' field
+    And I press 'Login' button on the 'Login' page
+    Then I should see that 'My profile' title is displayed
 
 

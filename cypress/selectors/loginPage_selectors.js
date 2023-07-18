@@ -8,7 +8,7 @@ export default class LoginPage_selectors {
     loginButton = "#login_form_submit";
     myProfileTitle = ".title-icon > .title";
     invalidEmailAddressOrPassword = ".alert";
- 
+    myProfileAvatar = ".header-user-image > img";
   }
   
   

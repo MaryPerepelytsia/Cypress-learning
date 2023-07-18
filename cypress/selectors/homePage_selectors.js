@@ -2,7 +2,7 @@
 
 export default class HomePage_selectors {
   
-    acceptCookiesButton = ".log#confirmCookiein";
+    acceptCookiesButton = "#confirmCookie";
     bloomentyIcon = ".top > .logo > .slogan";
     servicesMenu = ":nth-child(1) > .nav-item-title";
     encyclopediaMenu = ":nth-child(2) > .nav-item-title";

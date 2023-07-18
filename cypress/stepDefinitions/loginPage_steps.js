@@ -46,10 +46,6 @@ Then("I should see that 'Invalid email address or password!' alert is displayed"
     cy.get(loginPage_selectors.invalidEmailAddressOrPassword).should("be.visible")
   });
 
-// When("I fill in the 'Email' field on the 'Login' page with 'Correct' data", () => {
-//     cy.get(loginPage_selectors.emailInputField).clear().type(loginPage_data.emailData.emailInputCorrectData);
-//   });
-
 When("I fill in 'Password' field", () => {
     cy.get(loginPage_selectors.passwordInputField).clear().type("12345678");
   });
@@ -57,23 +53,6 @@ When("I fill in 'Password' field", () => {
 Then("I should see that 'My profile' title is displayed", () => {
     cy.get(loginPage_selectors.myProfileTitle).should("be.visible")
   });
-
-// When("I fill in the 'Email' field on the 'Login' page with 'No symbols before At' data", () => {
-//     cy.get(loginPage_selectors.emailInputField).clear().type(loginPage_data.emailData.emailInputIncorrectData.noSymbolsBeforeAt);
-//   });
-
-// When("I fill in the 'Email' field on the 'Login' page with 'No symbols after Dot' data", () => {
-//     cy.get(loginPage_selectors.emailInputField).clear().type(loginPage_data.emailData.emailInputIncorrectData.noSymbolsAfterDot);
-//   });
-
-// When("I fill in the 'Email' field on the 'Login' page with 'No Dot' data", () => {
-//     cy.get(loginPage_selectors.emailInputField).clear().type(loginPage_data.emailData.emailInputIncorrectData.noDotEmailData);
-//   });
-
-// When("I fill in the 'Email' field on the 'Login' page with 'No At' data", () => {
-//     cy.get(loginPage_selectors.emailInputField).clear().type(loginPage_data.emailData.emailInputIncorrectData.noAtEmailData);
-//   });
-
 
 When("I fill in the 'Email' field on the 'Login' page with {string} data", (emailInputData) => {
     switch (emailInputData) {
@@ -93,12 +72,13 @@ When("I fill in the 'Email' field on the 'Login' page with {string} data", (emai
             break;
         case "Capital letters":
           cy.get(loginPage_selectors.emailInputField).clear().type(loginPage_data.emailData.emailInputCorrectData.capitalLetters);
-          break;
+            break;
         default:
           throw new Error(`Unknown email data is specified: ${emailInputData}`);  
   }
  
 })
+
 
 
 
