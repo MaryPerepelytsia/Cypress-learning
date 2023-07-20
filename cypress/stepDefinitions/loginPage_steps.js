@@ -85,24 +85,25 @@ When("I fill in the 'Email' field on the 'Login' page with {string} data", (emai
 When("I fill in 'Password' field on the 'Login' page with {string} data", (passwordInputData) => {
     switch (passwordInputData) {
         case "Correct":
-            cy.get(lloginPage_selectors.passwordInputField).clear().type(loginPage_data.passwordData.passwordInputCorrectData);
+            common_page.typeDataForInputField(loginPage_selectors.passwordInputField, loginPage_data.passwordData.passwordInputCorrectData);
             break;
         case "Space before Password":
-            cy.get(loginPage_selectors.passwordInputField).clear().type(loginPage_data.passwordData.passwordInputIncorrectData.spaceBeforePassword);
+            common_page.typeDataForInputField(loginPage_selectors.passwordInputField, loginPage_data.passwordData.passwordInputIncorrectData.spaceBeforePassword);
             break;
         case "Space after Password":
-            cy.get(loginPage_selectors.passwordInputField).clear().type(loginPage_data.passwordData.passwordInputIncorrectData.spaceAfterPassword);            break;
+            common_page.typeDataForInputField(loginPage_selectors.passwordInputField, loginPage_data.passwordData.passwordInputIncorrectData.spaceAfterPassword);          
+            break;
         case "Password in CapsLock":
-            cy.get(loginPage_selectors.passwordInputField).clear().type(loginPage_data.passwordData.passwordInputIncorrectData.passwordInCapsLock);
+            common_page.typeDataForInputField(loginPage_selectors.passwordInputField, loginPage_data.passwordData.passwordInputIncorrectData.passwordInCapsLock);
             break;
         case "Password without last symbol":
-            cy.get(loginPage_selectors.passwordInputField).clear().type(loginPage_data.passwordData.passwordInputIncorrectData.passwordWithoutLastSymbol);
+            common_page.typeDataForInputField(loginPage_selectors.passwordInputField, loginPage_data.passwordData.passwordInputIncorrectData.passwordWithoutLastSymbol);
             break;
         case "Password without first symbol":
-          cy.get(loginPage_selectors.passwordInputField).clear().type(loginPage_data.passwordData.passwordInputIncorrectData.passwordWithoutFirstSymbol);
+            common_page.typeDataForInputField(loginPage_selectors.passwordInputField, loginPage_data.passwordData.passwordInputIncorrectData.passwordWithoutFirstSymbol);
             break;
         default:
-          throw new Error(`Unknown Password data is specified: ${emailInputData}`);  
+          throw new Error(`Unknown Password data is specified: ${passwordInputData}`);  
   }
  
 })
