@@ -1,7 +1,9 @@
 import {Given, When, Then, And} from "@badeball/cypress-cucumber-preprocessor";
 import LoginPage_selectors from "../selectors/loginPage_selectors";
+import Common_page from "../pageObjects/common_page";
 
 const loginPage_selectors = new LoginPage_selectors();
+const common_page = new Common_page();
 
 let loginPage_data; //Used as link to the fixxtures data.
 
@@ -57,21 +59,22 @@ Then("I should see that 'My profile' title is displayed", () => {
 When("I fill in the 'Email' field on the 'Login' page with {string} data", (emailInputData) => {
     switch (emailInputData) {
         case "Correct":
-            cy.get(loginPage_selectors.emailInputField).clear().type(loginPage_data.emailData.emailInputCorrectData.correctEmail);
+            common_page.typeDataForInputField(loginPage_selectors.emailInputField, loginPage_data.emailData.emailInputCorrectData.correctEmail);
             break;
         case "No symbols before At":
-            cy.get(loginPage_selectors.emailInputField).clear().type(loginPage_data.emailData.emailInputIncorrectData.noSymbolsBeforeAt);
+            common_page.typeDataForInputField(loginPage_selectors.emailInputField, loginPage_data.emailData.emailInputIncorrectData.noSymbolsBeforeAt);
             break;
         case "No symbols after Dot":
-            cy.get(loginPage_selectors.emailInputField).clear().type(loginPage_data.emailData.emailInputIncorrectData.noSymbolsAfterDot);            break;
+            common_page.typeDataForInputField(loginPage_selectors.emailInputField, loginPage_data.emailData.emailInputIncorrectData.noSymbolsAfterDot);
+            break;
         case "No Dot":
-            cy.get(loginPage_selectors.emailInputField).clear().type(loginPage_data.emailData.emailInputIncorrectData.noDotEmailData);
+            common_page.typeDataForInputField(loginPage_selectors.emailInputField, loginPage_data.emailData.emailInputIncorrectData.noDotEmailData);
             break;
         case "No At":
-            cy.get(loginPage_selectors.emailInputField).clear().type(loginPage_data.emailData.emailInputIncorrectData.noAtEmailData);
+            common_page.typeDataForInputField(loginPage_selectors.emailInputField, loginPage_data.emailData.emailInputIncorrectData.noAtEmailData);
             break;
         case "Capital letters":
-          cy.get(loginPage_selectors.emailInputField).clear().type(loginPage_data.emailData.emailInputCorrectData.capitalLettersEmail);
+            common_page.typeDataForInputField(loginPage_selectors.emailInputField, loginPage_data.emailData.emailInputCorrectData.capitalLettersEmail);
             break;
         default:
           throw new Error(`Unknown email data is specified: ${emailInputData}`);  
