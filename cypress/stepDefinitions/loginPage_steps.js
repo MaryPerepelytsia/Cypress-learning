@@ -48,9 +48,9 @@ Then("I should see that 'Invalid email address or password!' alert is displayed"
     cy.get(loginPage_selectors.invalidEmailAddressOrPassword).should("be.visible")
   });
 
-When("I fill in 'Password' field", () => {
-    cy.get(loginPage_selectors.passwordInputField).clear().type(loginPage_data.passwordData.passwordInputCorrectData);
-  });
+// When("I fill in 'Password' field on the 'Login' page with 'Correct' data", () => {
+//     cy.get(loginPage_selectors.passwordInputField).clear().type(loginPage_data.passwordData.passwordInputCorrectData);
+//   });
   
 Then("I should see that 'My profile' title is displayed", () => {
     cy.get(loginPage_selectors.myProfileTitle).should("be.visible")
