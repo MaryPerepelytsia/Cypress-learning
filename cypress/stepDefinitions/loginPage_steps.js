@@ -119,7 +119,6 @@ When("I navigate to {string} page", (pageURLData) => {
         default:
           throw new Error(`Unknown page is specified: ${pageURLData}`);  
   }
- 
 })
 
 

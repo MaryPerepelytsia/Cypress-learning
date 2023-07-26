@@ -21,14 +21,6 @@ before(() => {
   
   });
 
-When("I navigate to 'Home' page", () => {
-  cy.visit(cookiesPage_data.homePageURL);
-});
-
-When("I navigate to 'Vacancies' page", () => {
-    cy.visit(cookiesPage_data.vacanciesPageURL);
-  });
-
 Then("I should see 'Cookies' page", () => {
     homePagePage.checkCookiesPageIsVisible();
 });
@@ -89,10 +81,6 @@ When("I refresh the page", () => {
     cy.reload()
   });
   
-When("I wait for 3 seconds", () => {
-    cy.wait(3000)
-  });
-
 When("I press 'Back' button in the Browser", () => {
     cy.go("back");
   });
@@ -114,7 +102,19 @@ Then("I should see {string} on the 'Cookies' page", (itemCookiesPage) => {
     cy.get("itemCookiesPage").should("be.visible");
   });
 
-// When('When I press {string} button in the Browser', (s) => {
-//   // Write code here that turns the phrase above into concrete actions
-// })
+When("I wait for {string} seconds", (waitData) => {
+    switch (waitData) {
+        case "2":
+            cy.wait(2000);
+            break;
+        case "3":
+            cy.wait(3000);
+            break;
+        case "7":
+            cy.wait(7000);
+            break;
+        default:
+          throw new Error(`Unknown time for waiting is specified: ${waitData}`);  
+  }
+})
 

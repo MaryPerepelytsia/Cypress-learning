@@ -11,7 +11,7 @@ Scenario: Verify elements'Cookies' page
 
 Scenario: Verify that 'Cookies' page is displayed
     When I navigate to 'Home' page
-    And I wait for 3 seconds
+    And I wait for "3" seconds
     Then I should see that 'Cookies' page is displayed
 
 Scenario: Verify 'Cancel' button on the 'Cookies' page
@@ -20,20 +20,20 @@ Scenario: Verify 'Cancel' button on the 'Cookies' page
 
 Scenario: Verify that 'Cookies' page is Not displayed after Page Refresh
     When I refresh the page
-    And I wait for 3 seconds
+    And I wait for "3" seconds
     Then I should see that 'Cookies' page is Not displayed
 
 Scenario: Verify 'Cookie page' link Via clicking link
     When I clear all Cookies
     And I refresh the page
-    And I wait for 3 seconds
+    And I wait for "3" seconds
     And I select 'Cookie page' link on the 'Cookies' page
     Then I should see that 'Cookies rules' is opened
   
 Scenario: Verify 'Cookie page' link Via 'checking href'
    When I press 'Back' button in the Browser
    And I refresh the page
-   And I wait for 3 seconds
+   And I wait for "3" seconds
    Then I should see that 'CookiesPage' link is correct
 
 Scenario: Verify 'Cookie page' link Via Forward
@@ -51,7 +51,7 @@ Scenario: Verify 'Accept' button on the 'Cookies' page
 
  Scenario: Verify that 'Cookies' page is Not displayed after Page Refresh
     When I refresh the page
-    And I wait for 3 seconds
+    And I wait for "3" seconds
     Then I should see that 'Cookies' page is Not displayed  
 
   

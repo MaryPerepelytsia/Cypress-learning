@@ -2,7 +2,7 @@ Feature: Verification of Bloomenty Login page
 
 Scenario: Verify 'Login' button from the Home page
     When I navigate to "Home" page
-    And I wait for 3 seconds
+    And I wait for "3" seconds
     And I press 'Cancel' button on the 'Cookies' page
     And I press 'Login' button on the 'Home' page
     Then I should see that 'Login' page is displayed
@@ -82,7 +82,7 @@ Scenario: Verify "Capital letters" input data for 'Email' field
     Given I clear all Cookies
     And I refresh the page
     And I navigate to 'Login' page
-    And I wait for 3 seconds
+    And I wait for "3" seconds
     And I click 'Accept' button
     When I fill in the 'Email' field on the 'Login' page with 'Capital letters' data
     And I fill in 'Password' field on the 'Login' page with "Correct" data
