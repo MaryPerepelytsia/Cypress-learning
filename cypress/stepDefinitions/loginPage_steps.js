@@ -6,6 +6,13 @@ const loginPage_selectors = new LoginPage_selectors();
 const common_page = new Common_page();
 
 let loginPage_data; //Used as link to the fixxtures data.
+let cookiesPage_data;
+
+before(() => {
+    cy.fixture("/cookiesPage.json").then((pageDataFile) => {
+        cookiesPage_data = pageDataFile;
+    });
+  });  
 
 before(() => {
     cy.fixture("/loginPage.json").then((loginDataFile) => {
@@ -22,10 +29,6 @@ before(() => {
 
 Then("I should see that 'Login' page is displayed", () => {
     cy.get(loginPage_selectors.loginPage).should("be.visible")
-  });
-
-When("I navigate to 'Login' page", () => {
-    cy.visit(loginPage_data.URLs.loginPageURL);
   });
 
 Then("I should see that 'Login' page URL is correct", () => {
@@ -47,10 +50,6 @@ When("I press 'Login' button on the 'Login' page", () => {
 Then("I should see that 'Invalid email address or password!' alert is displayed", () => {
     cy.get(loginPage_selectors.invalidEmailAddressOrPassword).should("be.visible")
   });
-
-// When("I fill in 'Password' field on the 'Login' page with 'Correct' data", () => {
-//     cy.get(loginPage_selectors.passwordInputField).clear().type(loginPage_data.passwordData.passwordInputCorrectData);
-//   });
   
 Then("I should see that 'My profile' title is displayed", () => {
     cy.get(loginPage_selectors.myProfileTitle).should("be.visible")
@@ -79,7 +78,6 @@ When("I fill in the 'Email' field on the 'Login' page with {string} data", (emai
         default:
           throw new Error(`Unknown email data is specified: ${emailInputData}`);  
   }
- 
 })
 
 When("I fill in 'Password' field on the 'Login' page with {string} data", (passwordInputData) => {
@@ -105,8 +103,25 @@ When("I fill in 'Password' field on the 'Login' page with {string} data", (passw
         default:
           throw new Error(`Unknown Password data is specified: ${passwordInputData}`);  
   }
+})
+
+When("I navigate to {string} page", (pageURLData) => {
+    switch (pageURLData) {
+        case "Login":
+            cy.visit(loginPage_data.URLs.loginPageURL);
+            break;
+        case "Home":
+            cy.visit(cookiesPage_data.homePageURL);
+            break;
+        case "Vacancies":
+            cy.visit(cookiesPage_data.vacanciesPageURL);
+            break;
+        default:
+          throw new Error(`Unknown page is specified: ${pageURLData}`);  
+  }
  
 })
+
 
 
 
