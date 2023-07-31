@@ -35,14 +35,6 @@ Then("I should see that 'Login' page URL is correct", () => {
     cy.url().should('include','myaccount/login')
   });
   
-Then("I should see that 'Email' field is displayed", () => {
-    cy.get(loginPage_selectors.emailInputField).should("be.visible")
-  });
-
-Then("I should see that 'Password' field is displayed", () => {
-    cy.get(loginPage_selectors.passwordInputField).should("be.visible")
-  });
-
 When("I press 'Login' button on the 'Login' page", () => {
     cy.get(loginPage_selectors.loginButton).click();
   });
@@ -121,6 +113,18 @@ When("I navigate to {string} page", (pageURLData) => {
   }
 })
 
+When("I should see that {string} field is displayed", (fieldOnLoginPage) => {
+    switch (fieldOnLoginPage) {
+        case "Email":
+            cy.get(loginPage_selectors.emailInputField).should("be.visible");
+            break;
+        case "Password":
+            cy.get(loginPage_selectors.passwordInputField).should("be.visible");
+            break;
+        default:
+          throw new Error(`Unknown field is specified: ${fieldOnLoginPage}`);  
+  }
+})
 
 
 
