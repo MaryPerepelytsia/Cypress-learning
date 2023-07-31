@@ -7,8 +7,8 @@ Scenario: Verify 'Login' button from the Home page
     And I press 'Login' button on the 'Home' page
     Then I should see that 'Login' page is displayed
     And I should see that 'Login' page URL is correct
-    And I should see that 'Email' field is displayed
-    And I should see that 'Password' field is displayed
+    And I should see that "Email" field is displayed
+    And I should see that "Password" field is displayed
 
 Scenario: Verify login with empty credentials
     When I press 'Login' button on the 'Login' page
