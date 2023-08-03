@@ -13,8 +13,8 @@ export default class CookiesPage_selectors {
     cancelButtonOnCookiesPage = "#rejectCookie";
     acceptButtonOnCookiesPage = "#confirmCookie";
     vacanciesSubMenu = "/html/body/div/header/div/div[2]/nav/span[1]/ul/li[1]";
-    loginButtonOnHomePage = ".nav-bar > .login-btn";
- 
+    // loginButtonOnHomePage = ".nav-bar > .login-btn";
+    loginButtonOnHomePage = "[data-cy=headerLoginButton]";
   }
   
   

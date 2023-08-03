@@ -24,7 +24,6 @@ before(() => {
 
     // cy.visit('https://bloomenty.com/nl/home');
     cy.session('cookie', () =>{});
-  
   });
 
 Then("I should see that 'Login' page is displayed", () => {
@@ -36,7 +35,7 @@ Then("I should see that 'Login' page URL is correct", () => {
   });
   
 When("I press 'Login' button on the 'Login' page", () => {
-    cy.get(loginPage_selectors.loginButton).click();
+    cy.get(loginPage_selectors.loginButtonOnLoginPage).click();
   });
 
 Then("I should see that 'Invalid email address or password!' alert is displayed", () => {
