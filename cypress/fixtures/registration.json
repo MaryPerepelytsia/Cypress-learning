@@ -1,0 +1,18 @@
+{
+    "nickNameData": {
+      "incorrectNickNameData": {
+        "nameInput1symbols": "a",
+        "nameInput51symbols": "asdadag hjkjh  dhkhljh daghj gsgksjhkjh sdjgkjshkgs"
+      },
+      "correctNickNameDataData": [
+        "asjkfh asgsadg",
+        "weyerwy fghdf weryery",
+        "sdf-wtwe",
+        "12",
+        "345",
+        "skjfsdfjkgasdgsds",
+        "AQWERTYUIOPKASDFGHJKLZXCVBNMQWERTYUISDFGHXCVBTYDFA",
+        "aQWERTY UIOPKASD FGHJKLZX CVBN MQWER TYUICV BTYDFa"
+      ]
+    }
+  }
