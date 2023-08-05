@@ -26,10 +26,6 @@ Then("I should see that 'Encyclopedia' menu is present", () => {
     cy.get(homePage_selectors.encyclopediaMenu).should("be.visible")
   });
 
-// Then("I should see that 'Mijn Bloomenty' menu is present", () => {
-//     cy.get(":nth-child(3) > .nav-item-title").should("be.visible")
-//   });
-
 Then("I should see that 'About us' menu is present", () => {
     cy.get(homePage_selectors.aboutUsMenu).should("be.visible")
   });

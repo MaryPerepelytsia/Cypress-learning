@@ -6,7 +6,7 @@ export default class LoginPage_selectors {
     emailInputField = "[data-cy=emailInputField]";
     passwordInputField = "[data-cy=passwordInputField]";
     loginButtonOnLoginPage = "[data-cy=loginFormSubmitButton]";
-    myProfileTitle = "[data-top=323.18748781085014]";
+    myProfileTitle = ".title-icon > .title";
     invalidEmailAddressOrPassword = ".alert";
     myProfileAvatar = ".header-user-image > img";
   }

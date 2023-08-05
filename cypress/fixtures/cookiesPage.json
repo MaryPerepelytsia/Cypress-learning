@@ -1,5 +1,6 @@
 
 {
     "homePageURL" : "https://bloomenty.com/nl/home",
-    "vacanciesPageURL" : "https://bloomenty.com/nl/vacancies"
+    "vacanciesPageURL" : "https://bloomenty.com/nl/vacancies",
+    "registrationPageURL" : "https://bloomenty.com/nl/registration"
  }

@@ -107,6 +107,9 @@ When("I navigate to {string} page", (pageURLData) => {
         case "Vacancies":
             cy.visit(cookiesPage_data.vacanciesPageURL);
             break;
+        case "Registration":
+            cy.visit(cookiesPage_data.registrationPageURL);
+            break;
         default:
           throw new Error(`Unknown page is specified: ${pageURLData}`);  
   }
