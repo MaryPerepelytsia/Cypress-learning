@@ -41,7 +41,7 @@ before(() => {
     cy.log("Моё rnd = " + rnd +
       " Это вот такое значение из нашего массива: " + registrationPage_data.nickNameData.correctNickNameDataData[rnd])
   
-    common_page.typeDataForInputField(registrationPage_selectors.nickNameOnRegistrationPage, registrationPage_data.nickNameData.correctNickNameDataData[rnd]);
+    common_page.typeDataForInputField(registrationPage_selectors.nickNameFieldForRegistration, registrationPage_data.nickNameData.correctNickNameDataData[rnd]);
   })
 
   When("I fill in the 'First Name' field on the 'Registration' page with Correct data", () => {
@@ -50,7 +50,7 @@ before(() => {
     cy.log("Моё rnd = " + rnd +
       " Это вот такое значение из нашего массива: " + registrationPage_data.firstNameData.correctFirstNameDataData[rnd])
   
-    common_page.typeDataForInputField(registrationPage_selectors.firstNameOnRegistrationPage, registrationPage_data.firstNameData.correctFirstNameDataData[rnd]);
+    common_page.typeDataForInputField(registrationPage_selectors.firstNameFieldForRegistration, registrationPage_data.firstNameData.correctFirstNameDataData[rnd]);
   })
 
   When("I fill in the 'Last Name' field on the 'Registration' page with Correct data", () => {
@@ -59,7 +59,7 @@ before(() => {
     cy.log("Моё rnd = " + rnd +
       " Это вот такое значение из нашего массива: " + registrationPage_data.lastNameData.correctLastNameDataData[rnd])
   
-    common_page.typeDataForInputField(registrationPage_selectors.lastNameOnRegistrationPage, registrationPage_data.lastNameData.correctLastNameDataData[rnd]);
+    common_page.typeDataForInputField(registrationPage_selectors.lastNameFieldForRegistration, registrationPage_data.lastNameData.correctLastNameDataData[rnd]);
   })
   
   
