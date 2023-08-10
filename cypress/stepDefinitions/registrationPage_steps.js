@@ -35,34 +35,60 @@ before(() => {
     cy.session('cookie', () =>{});
   });
 
-  When("I fill in the 'Nick Name' field on the 'Registration' page with Correct data", () => {
-    var rnd = common_page.getRandomIndexValueForArray(registrationPage_data.nickNameData.correctNickNameDataData);
+//   When("I fill in the 'Nick Name' field on the 'Registration' page with Correct data", () => {
+//     var rnd = common_page.getRandomIndexValueForArray(registrationPage_data.nickNameData.correctNickNameDataData);
   
-    cy.log("Моё rnd = " + rnd +
-      " Это вот такое значение из нашего массива: " + registrationPage_data.nickNameData.correctNickNameDataData[rnd])
+//     cy.log("Моё rnd = " + rnd +
+//       " Это вот такое значение из нашего массива: " + registrationPage_data.nickNameData.correctNickNameDataData[rnd])
   
-    common_page.typeDataForInputField(registrationPage_selectors.nickNameFieldForRegistration, registrationPage_data.nickNameData.correctNickNameDataData[rnd]);
-  })
+//     common_page.typeDataForInputField(registrationPage_selectors.nickNameFieldForRegistration, registrationPage_data.nickNameData.correctNickNameDataData[rnd]);
+//   })
 
-  When("I fill in the 'First Name' field on the 'Registration' page with Correct data", () => {
-    var rnd = common_page.getRandomIndexValueForArray(registrationPage_data.firstNameData.correctFirstNameDataData);
+//   When("I fill in the 'First Name' field on the 'Registration' page with Correct data", () => {
+    // var rnd = common_page.getRandomIndexValueForArray(registrationPage_data.firstNameData.correctFirstNameDataData);
   
-    cy.log("Моё rnd = " + rnd +
-      " Это вот такое значение из нашего массива: " + registrationPage_data.firstNameData.correctFirstNameDataData[rnd])
+    // cy.log("Моё rnd = " + rnd +
+    //   " Это вот такое значение из нашего массива: " + registrationPage_data.firstNameData.correctFirstNameDataData[rnd])
   
-    common_page.typeDataForInputField(registrationPage_selectors.firstNameFieldForRegistration, registrationPage_data.firstNameData.correctFirstNameDataData[rnd]);
-  })
+    // common_page.typeDataForInputField(registrationPage_selectors.firstNameFieldForRegistration, registrationPage_data.firstNameData.correctFirstNameDataData[rnd]);
+//   })
 
-  When("I fill in the 'Last Name' field on the 'Registration' page with Correct data", () => {
-    var rnd = common_page.getRandomIndexValueForArray(registrationPage_data.lastNameData.correctLastNameDataData);
+//   When("I fill in the 'Last Name' field on the 'Registration' page with Correct data", () => {
+    // var rnd = common_page.getRandomIndexValueForArray(registrationPage_data.lastNameData.correctLastNameDataData);
   
-    cy.log("Моё rnd = " + rnd +
-      " Это вот такое значение из нашего массива: " + registrationPage_data.lastNameData.correctLastNameDataData[rnd])
+    // cy.log("Моё rnd = " + rnd +
+    //   " Это вот такое значение из нашего массива: " + registrationPage_data.lastNameData.correctLastNameDataData[rnd])
   
-    common_page.typeDataForInputField(registrationPage_selectors.lastNameFieldForRegistration, registrationPage_data.lastNameData.correctLastNameDataData[rnd]);
-  })
+    // common_page.typeDataForInputField(registrationPage_selectors.lastNameFieldForRegistration, registrationPage_data.lastNameData.correctLastNameDataData[rnd]);
+//   })
+
+When("I fill in the {string} field on the 'Registration' page with Correct data", (inputFieldName) => {
+    switch (inputFieldName) {
+        case "Nick Name":
+            var rnd = common_page.getRandomIndexValueForArray(registrationPage_data.nickNameData.correctNickNameDataData);
   
+            cy.log("Моё rnd = " + rnd +
+              " Это вот такое значение из нашего массива: " + registrationPage_data.nickNameData.correctNickNameDataData[rnd])
   
+            common_page.typeDataForInputField(registrationPage_selectors.nickNameFieldForRegistration, registrationPage_data.nickNameData.correctNickNameDataData[rnd]);
+            break;
+        case "First Name":
+            var rnd = common_page.getRandomIndexValueForArray(registrationPage_data.firstNameData.correctFirstNameDataData);
   
+            cy.log("Моё rnd = " + rnd +
+              " Это вот такое значение из нашего массива: " + registrationPage_data.firstNameData.correctFirstNameDataData[rnd])
+          
+            common_page.typeDataForInputField(registrationPage_selectors.firstNameFieldForRegistration, registrationPage_data.firstNameData.correctFirstNameDataData[rnd]);
+            break;
+        case "Last Name":
+            var rnd = common_page.getRandomIndexValueForArray(registrationPage_data.lastNameData.correctLastNameDataData);
   
-  
+            cy.log("Моё rnd = " + rnd +
+              " Это вот такое значение из нашего массива: " + registrationPage_data.lastNameData.correctLastNameDataData[rnd])
+          
+            common_page.typeDataForInputField(registrationPage_selectors.lastNameFieldForRegistration, registrationPage_data.lastNameData.correctLastNameDataData[rnd]);
+            break;
+        default:
+          throw new Error('Unknown input field name is specified: ${inputFieldName}');  
+  }
+})
