@@ -61,13 +61,18 @@ When("I select 'Cookie page' link on the 'Cookies' page", () => {
     cy.get(cookiesPage_selectors.cookiePageLink).invoke('removeAttr', 'target').click();
   });
 
-When("I press 'Cancel' button on the 'Cookies' page", () => {
-    cy.get(cookiesPage_selectors.cancelButtonOnCookiesPage).click();
-  });
-
-When("I press 'Accept' button on the 'Cookies' page", () => {
-    cy.get(cookiesPage_selectors.acceptButtonOnCookiesPage).click();
-  });
+When("I press {string} button on the 'Cookies' page", (buttonName) => {
+    switch (buttonName) {
+        case "Accept":
+            cy.get(cookiesPage_selectors.acceptButtonOnCookiesPage).click();
+            break;
+        case "Cancel":
+            cy.get(cookiesPage_selectors.cancelButtonOnCookiesPage).click();
+            break;
+        default:
+          throw new Error(`Unknown button name is specified: ${buttonName}`);  
+  }
+})
  
 When("I select 'Vacancies' sub-menu", () => {
     cy.get(cookiesPage_selectors.vacanciesSubMenu).click();
