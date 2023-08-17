@@ -15,7 +15,7 @@ Scenario: Verify that 'Cookies' page is displayed
     Then I should see that 'Cookies' page is displayed
 
 Scenario: Verify 'Cancel' button on the 'Cookies' page
-    When I press 'Cancel' button on the 'Cookies' page
+    When I press "Cancel" button on the 'Cookies' page
     Then I should see that 'Cookies' page is Not displayed
 
 Scenario: Verify that 'Cookies' page is Not displayed after Page Refresh

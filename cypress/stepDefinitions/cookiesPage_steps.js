@@ -1,9 +1,10 @@
 import {Given, When, Then, And} from "@badeball/cypress-cucumber-preprocessor";
+import Common_page from "../pageObjects/common_page";
 import HomePagePage from "../pageObjects/homePage_page.js";
-
-const homePagePage = new HomePagePage();
-
 import CookiesPage_selectors from "../selectors/cookiesPage_selectors";
+
+const common_page = new Common_page();
+const homePagePage = new HomePagePage();
 const cookiesPage_selectors = new CookiesPage_selectors();
 
 let cookiesPage_data; //Used as link to the fixxtures data.
@@ -62,12 +63,15 @@ When("I select 'Cookie page' link on the 'Cookies' page", () => {
   });
 
 When("I press {string} button on the 'Cookies' page", (buttonName) => {
+    const selector = common_page.removeSpaceAndApplyCamelCase(buttonName, "", "ButtonOnCookiesPage");
     switch (buttonName) {
         case "Accept":
-            cy.get(cookiesPage_selectors.acceptButtonOnCookiesPage).click();
-            break;
+            // cy.get(cookiesPage_selectors.acceptButtonOnCookiesPage).click();
+            // break;
         case "Cancel":
-            cy.get(cookiesPage_selectors.cancelButtonOnCookiesPage).click();
+            // cy.get(cookiesPage_selectors.cancelButtonOnCookiesPage).click();
+            // break;
+            cy.get(cookiesPage_selectors[selector]).click();
             break;
         default:
           throw new Error(`Unknown button name is specified: ${buttonName}`);  
