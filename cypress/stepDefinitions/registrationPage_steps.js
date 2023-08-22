@@ -7,7 +7,7 @@ const loginPage_selectors = new LoginPage_selectors();
 const registrationPage_selectors = new RegistrationPage_selectors();
 const common_page = new Common_page();
 
-let loginPage_data; //Used as link to the fixxtures data.
+let loginPage_data; //Used as link to the fixtures data.
 let cookiesPage_data;
 let registrationPage_data;
 
@@ -40,23 +40,14 @@ When("I fill in the {string} field on the 'Registration' page with Correct data"
     const subArray = common_page.removeSpaceAndApplyCamelCase(inputFieldName, "correct", "Data");
     const array = common_page.removeSpaceAndApplyCamelCase(inputFieldName, "", "Data");
 
+    cy.log("Selector = " + selector + "; Sub Array = " + subArray + "; Array = " + array)
+
     switch (inputFieldName) {
         case "Nick Name":
             // var rnd = common_page.getRandomIndexValueForArray(registrationPage_data.nickNameData.correctNickNameData);
-  
-            // cy.log("Моё rnd = " + rnd +
-            //   " Это вот такое значение из нашего массива: " + registrationPage_data.nickNameData.correctNickNameData[rnd])
-  
             // common_page.typeDataForInputField(registrationPage_selectors.nickNameFieldForRegistration, registrationPage_data.nickNameData.correctNickNameData[rnd]);
             // break;
         case "First Name":
-            // var rnd = common_page.getRandomIndexValueForArray(registrationPage_data.firstNameData.correctFirstNameData);
-  
-            // cy.log("Моё rnd = " + rnd +
-            //   " Это вот такое значение из нашего массива: " + registrationPage_data.firstNameData.correctFirstNameData[rnd])
-          
-            // common_page.typeDataForInputField(registrationPage_selectors.firstNameFieldForRegistration, registrationPage_data.firstNameData.correctFirstNameData[rnd]);
-            // break;
         case "Last Name":
             var rnd = common_page.getRandomIndexValueForArray(registrationPage_data[array][subArray]);
   
