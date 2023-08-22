@@ -36,30 +36,34 @@ before(() => {
   });
 
 When("I fill in the {string} field on the 'Registration' page with Correct data", (inputFieldName) => {
+    const selector = common_page.removeSpaceAndApplyCamelCase(inputFieldName, "", "FieldForRegistration");
+    const subArray = common_page.removeSpaceAndApplyCamelCase(inputFieldName, "correct", "Data");
+    const array = common_page.removeSpaceAndApplyCamelCase(inputFieldName, "", "Data");
+
     switch (inputFieldName) {
         case "Nick Name":
-            var rnd = common_page.getRandomIndexValueForArray(registrationPage_data.nickNameData.correctNickNameDataData);
+            // var rnd = common_page.getRandomIndexValueForArray(registrationPage_data.nickNameData.correctNickNameData);
   
-            cy.log("Моё rnd = " + rnd +
-              " Это вот такое значение из нашего массива: " + registrationPage_data.nickNameData.correctNickNameDataData[rnd])
+            // cy.log("Моё rnd = " + rnd +
+            //   " Это вот такое значение из нашего массива: " + registrationPage_data.nickNameData.correctNickNameData[rnd])
   
-            common_page.typeDataForInputField(registrationPage_selectors.nickNameFieldForRegistration, registrationPage_data.nickNameData.correctNickNameDataData[rnd]);
-            break;
+            // common_page.typeDataForInputField(registrationPage_selectors.nickNameFieldForRegistration, registrationPage_data.nickNameData.correctNickNameData[rnd]);
+            // break;
         case "First Name":
-            var rnd = common_page.getRandomIndexValueForArray(registrationPage_data.firstNameData.correctFirstNameDataData);
+            // var rnd = common_page.getRandomIndexValueForArray(registrationPage_data.firstNameData.correctFirstNameData);
   
-            cy.log("Моё rnd = " + rnd +
-              " Это вот такое значение из нашего массива: " + registrationPage_data.firstNameData.correctFirstNameDataData[rnd])
+            // cy.log("Моё rnd = " + rnd +
+            //   " Это вот такое значение из нашего массива: " + registrationPage_data.firstNameData.correctFirstNameData[rnd])
           
-            common_page.typeDataForInputField(registrationPage_selectors.firstNameFieldForRegistration, registrationPage_data.firstNameData.correctFirstNameDataData[rnd]);
-            break;
+            // common_page.typeDataForInputField(registrationPage_selectors.firstNameFieldForRegistration, registrationPage_data.firstNameData.correctFirstNameData[rnd]);
+            // break;
         case "Last Name":
-            var rnd = common_page.getRandomIndexValueForArray(registrationPage_data.lastNameData.correctLastNameDataData);
+            var rnd = common_page.getRandomIndexValueForArray(registrationPage_data[array][subArray]);
   
             cy.log("Моё rnd = " + rnd +
-              " Это вот такое значение из нашего массива: " + registrationPage_data.lastNameData.correctLastNameDataData[rnd])
+              " Это вот такое значение из нашего массива: " + registrationPage_data.lastNameData.correctLastNameData[rnd])
           
-            common_page.typeDataForInputField(registrationPage_selectors.lastNameFieldForRegistration, registrationPage_data.lastNameData.correctLastNameDataData[rnd]);
+            common_page.typeDataForInputField(registrationPage_selectors[selector], registrationPage_data[array][subArray][rnd]);
             break;
         default:
           throw new Error('Unknown input field name is specified: ${inputFieldName}');  
