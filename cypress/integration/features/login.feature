@@ -17,7 +17,7 @@ Scenario: Verify login with empty credentials
 Scenario: Verify 'No symbols before At' input data for 'Email' field
     When I clear all Cookies
     And I navigate to "Login" page
-    And I press 'Accept' button on the 'Cookies' page
+    And I press "Accept" button on the 'Cookies' page
     When I fill in the 'Email' field on the 'Login' page with "No symbols before At" data
     And I fill in 'Password' field on the 'Login' page with "Correct" data
     And I press 'Login' button on the 'Login' page
@@ -81,10 +81,10 @@ Scenario: Verify "Capital letters" input data for 'Email' field
 #   When I press 'Log out' button on the 'My profile' page
     Given I clear all Cookies
     And I refresh the page
-    And I navigate to 'Login' page
+    And I navigate to "Login" page
     And I wait for "3" seconds
     And I click 'Accept' button
-    When I fill in the 'Email' field on the 'Login' page with 'Capital letters' data
+    When I fill in the 'Email' field on the 'Login' page with "Capital letters" data
     And I fill in 'Password' field on the 'Login' page with "Correct" data
     And I press 'Login' button on the 'Login' page
     Then I should see that 'My profile' title is displayed

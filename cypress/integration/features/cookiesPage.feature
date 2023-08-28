@@ -1,7 +1,7 @@
 Feature: Verification of Bloomenty Cookies page
 
 Scenario: Verify elements'Cookies' page
-    When I navigate to 'Home' page
+    When I navigate to "Home" page
     Then I should see 'Cookies' page
     And I should see 'your flower community' icon
     And I should see 'Your cookie preferences' page header
@@ -10,7 +10,7 @@ Scenario: Verify elements'Cookies' page
     And I should see 'Not Accept' button
 
 Scenario: Verify that 'Cookies' page is displayed
-    When I navigate to 'Home' page
+    When I navigate to "Home" page
     And I wait for "3" seconds
     Then I should see that 'Cookies' page is displayed
 
@@ -41,12 +41,12 @@ Scenario: Verify 'Cookie page' link Via Forward
    Then I should see that 'Cookies rules' is opened
 
 Scenario: Verify that 'Cookies' page is Not displayed after navigation to another page
-    When I navigate to 'Vacancies' page
+    When I navigate to "Vacancies" page
     Then I should see that 'Cookies' page is Not displayed
 
 Scenario: Verify 'Accept' button on the 'Cookies' page
     When I clear all Cookies
-    And I press 'Accept' button on the 'Cookies' page
+    And I press "Accept" button on the 'Cookies' page
     Then I should see that 'Cookies' page is Not displayed
 
  Scenario: Verify that 'Cookies' page is Not displayed after Page Refresh

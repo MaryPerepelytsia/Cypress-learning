@@ -1,7 +1,7 @@
 Feature: Verification of Bloomenty Home page
 
   Scenario: Verify Header on the Home page
-    Given I navigate to 'Home' page
+    Given I navigate to "Home" page
     # And I wait for "3" seconds
     # And I click 'Accept' button
     Then I should see that 'Bloomenty' icon is present 
