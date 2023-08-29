@@ -97,17 +97,14 @@ When("I fill in 'Password' field on the 'Login' page with {string} data", (passw
 })
 
 When("I navigate to {string} page", (pageURLData) => {
-
     const dataURL = common_page.removeSpaceAndApplyCamelCase(pageURLData, "", "PageURL");
-
-    cy.log("page URL = " + dataURL)
+    // cy.log("page URL = " + dataURL)
 
     switch (pageURLData) {
         case "Login":
         case "Home":
         case "Vacancies":
-        case "Registration":
-            var rnd = common_page.getRandomIndexValueForArray(cookiesPage_data[dataURL]);
+        case "Registration":          
             cy.visit(cookiesPage_data[dataURL]);
             break;
         default:
@@ -116,12 +113,13 @@ When("I navigate to {string} page", (pageURLData) => {
 })
 
 When("I should see that {string} field is displayed", (fieldOnLoginPage) => {
+    const selector = common_page.removeSpaceAndApplyCamelCase(fieldOnLoginPage, "", "InputField");
+    // cy.log("selector of input field = " + selector)
+
     switch (fieldOnLoginPage) {
         case "Email":
-            cy.get(loginPage_selectors.emailInputField).should("be.visible");
-            break;
         case "Password":
-            cy.get(loginPage_selectors.passwordInputField).should("be.visible");
+            cy.get(loginPage_selectors[selector]).should("be.visible");
             break;
         default:
           throw new Error(`Unknown field is specified: ${fieldOnLoginPage}`);  
