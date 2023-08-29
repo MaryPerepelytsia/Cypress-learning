@@ -1,8 +1,5 @@
 
-{
-    "URLs": {
-        "loginPageURL": "https://bloomenty.com/nl/myaccount/login"
-    },
+{  
     "emailData": {
         "emailInputCorrectData": {
             "correctEmail": "testqa@gmail.com",

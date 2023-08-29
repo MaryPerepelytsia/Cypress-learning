@@ -97,18 +97,18 @@ When("I fill in 'Password' field on the 'Login' page with {string} data", (passw
 })
 
 When("I navigate to {string} page", (pageURLData) => {
+
+    const dataURL = common_page.removeSpaceAndApplyCamelCase(pageURLData, "", "PageURL");
+
+    cy.log("page URL = " + dataURL)
+
     switch (pageURLData) {
         case "Login":
-            cy.visit(loginPage_data.URLs.loginPageURL);
-            break;
         case "Home":
-            cy.visit(cookiesPage_data.homePageURL);
-            break;
         case "Vacancies":
-            cy.visit(cookiesPage_data.vacanciesPageURL);
-            break;
         case "Registration":
-            cy.visit(cookiesPage_data.registrationPageURL);
+            var rnd = common_page.getRandomIndexValueForArray(cookiesPage_data[dataURL]);
+            cy.visit(cookiesPage_data[dataURL]);
             break;
         default:
           throw new Error(`Unknown page is specified: ${pageURLData}`);  
