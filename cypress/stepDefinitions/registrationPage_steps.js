@@ -40,7 +40,7 @@ When("I fill in the {string} field on the 'Registration' page with Correct data"
     const subArray = common_page.removeSpaceAndApplyCamelCase(inputFieldName, "correct", "Data");
     const array = common_page.removeSpaceAndApplyCamelCase(inputFieldName, "", "Data");
 
-    cy.log("Selector = " + selector + "; Sub Array = " + subArray + "; Array = " + array)
+    // cy.log("Selector = " + selector + "; Sub Array = " + subArray + "; Array = " + array)
 
     switch (inputFieldName) {
         case "Nick Name":
