@@ -43,10 +43,7 @@ When("I fill in the {string} field on the 'Registration' page with Correct data"
     // cy.log("Selector = " + selector + "; Sub Array = " + subArray + "; Array = " + array)
 
     switch (inputFieldName) {
-        case "Nick Name":
-            // var rnd = common_page.getRandomIndexValueForArray(registrationPage_data.nickNameData.correctNickNameData);
-            // common_page.typeDataForInputField(registrationPage_selectors.nickNameFieldForRegistration, registrationPage_data.nickNameData.correctNickNameData[rnd]);
-            // break;
+        case "Nick Name":         
         case "First Name":
         case "Last Name":
             var rnd = common_page.getRandomIndexValueForArray(registrationPage_data[array][subArray]);

@@ -65,12 +65,8 @@ When("I select 'Cookie page' link on the 'Cookies' page", () => {
 When("I press {string} button on the 'Cookies' page", (buttonName) => {
     const selector = common_page.removeSpaceAndApplyCamelCase(buttonName, "", "ButtonOnCookiesPage");
     switch (buttonName) {
-        case "Accept":
-            // cy.get(cookiesPage_selectors.acceptButtonOnCookiesPage).click();
-            // break;
-        case "Cancel":
-            // cy.get(cookiesPage_selectors.cancelButtonOnCookiesPage).click();
-            // break;
+        case "Accept":          
+        case "Cancel":            
             cy.get(cookiesPage_selectors[selector]).click();
             break;
         default:

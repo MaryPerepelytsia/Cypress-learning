@@ -17,6 +17,7 @@ Scenario: Verify login with empty credentials
 Scenario: Verify 'No symbols before At' input data for 'Email' field
     When I clear all Cookies
     And I navigate to "Login" page
+    And I wait for "3" seconds
     And I press "Accept" button on the 'Cookies' page
     When I fill in the 'Email' field on the 'Login' page with "No symbols before At" data
     And I fill in 'Password' field on the 'Login' page with "Correct" data
@@ -36,7 +37,7 @@ Scenario: Verify 'No Dot' input data for 'Email' field
     Then I should see that 'Invalid email address or password!' alert is displayed
 
 Scenario: Verify 'No At' input data for 'Email' field
-    When I fill in the 'Email' field on the 'Login' page with "No Dot" data 
+    When I fill in the 'Email' field on the 'Login' page with "No At" data 
     And I fill in 'Password' field on the 'Login' page with "Correct" data
     And I press 'Login' button on the 'Login' page
     Then I should see that 'Invalid email address or password!' alert is displayed
@@ -53,9 +54,9 @@ Scenario: Verify 'Space after Password' input data for 'Password' field
     And I press 'Login' button on the 'Login' page
     Then I should see that 'Invalid email address or password!' alert is displayed  
 
-Scenario: Verify 'Password in CapsLock' input data for 'Password' field
+Scenario: Verify 'Password in Caps Lock' input data for 'Password' field
     When I fill in the 'Email' field on the 'Login' page with "Correct" data 
-    And I fill in 'Password' field on the 'Login' page with "Password in CapsLock" data
+    And I fill in 'Password' field on the 'Login' page with "Password in Caps Lock" data
     And I press 'Login' button on the 'Login' page
     Then I should see that 'Invalid email address or password!' alert is displayed
 

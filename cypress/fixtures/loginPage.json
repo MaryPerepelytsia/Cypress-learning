@@ -9,8 +9,8 @@
         "emailInputIncorrectData": {
             "noSymbolsBeforeAt": "@gmail.com",
             "noSymbolsAfterDot": "testqa@gmail.",
-            "noDotEmailData": "testqa@gmailcom",
-            "noAtEmailData": "testqagmail.com"
+            "noDot": "testqa@gmailcom",
+            "noAt": "testqagmail.com"
         }
     },
     "passwordData": {
