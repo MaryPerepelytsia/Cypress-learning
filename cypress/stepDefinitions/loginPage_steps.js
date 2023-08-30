@@ -47,24 +47,19 @@ Then("I should see that 'My profile' title is displayed", () => {
   });
 
 When("I fill in the 'Email' field on the 'Login' page with {string} data", (emailInputData) => {
+    const correctData = common_page.removeSpaceAndApplyCamelCase(emailInputData, "", "Email");
+    const incorrectData = common_page.removeSpaceAndApplyCamelCase(emailInputData, "", "");
+    cy.log("Incorrect email data = " + incorrectData)
     switch (emailInputData) {
-        case "Correct":
-            common_page.typeDataForInputField(loginPage_selectors.emailInputField, loginPage_data.emailData.emailInputCorrectData.correctEmail);
-            break;
-        case "No symbols before At":
-            common_page.typeDataForInputField(loginPage_selectors.emailInputField, loginPage_data.emailData.emailInputIncorrectData.noSymbolsBeforeAt);
-            break;
-        case "No symbols after Dot":
-            common_page.typeDataForInputField(loginPage_selectors.emailInputField, loginPage_data.emailData.emailInputIncorrectData.noSymbolsAfterDot);
-            break;
-        case "No Dot":
-            common_page.typeDataForInputField(loginPage_selectors.emailInputField, loginPage_data.emailData.emailInputIncorrectData.noDotEmailData);
-            break;
-        case "No At":
-            common_page.typeDataForInputField(loginPage_selectors.emailInputField, loginPage_data.emailData.emailInputIncorrectData.noAtEmailData);
-            break;
+        case "Correct":  
         case "Capital letters":
-            common_page.typeDataForInputField(loginPage_selectors.emailInputField, loginPage_data.emailData.emailInputCorrectData.capitalLettersEmail);
+            common_page.typeDataForInputField(loginPage_selectors.emailInputField, loginPage_data.emailData.emailInputCorrectData[correctData]);
+            break;
+        case "No symbols before At":            
+        case "No symbols after Dot":
+        case "No Dot":
+        case "No At":
+            common_page.typeDataForInputField(loginPage_selectors.emailInputField, loginPage_data.emailData.emailInputIncorrectData[incorrectData]);
             break;
         default:
           throw new Error(`Unknown email data is specified: ${emailInputData}`);  
@@ -72,24 +67,17 @@ When("I fill in the 'Email' field on the 'Login' page with {string} data", (emai
 })
 
 When("I fill in 'Password' field on the 'Login' page with {string} data", (passwordInputData) => {
+    const incorrectData = common_page.removeSpaceAndApplyCamelCase(passwordInputData, "", "");
     switch (passwordInputData) {
         case "Correct":
             common_page.typeDataForInputField(loginPage_selectors.passwordInputField, loginPage_data.passwordData.passwordInputCorrectData);
             break;
-        case "Space before Password":
-            common_page.typeDataForInputField(loginPage_selectors.passwordInputField, loginPage_data.passwordData.passwordInputIncorrectData.spaceBeforePassword);
-            break;
-        case "Space after Password":
-            common_page.typeDataForInputField(loginPage_selectors.passwordInputField, loginPage_data.passwordData.passwordInputIncorrectData.spaceAfterPassword);          
-            break;
-        case "Password in CapsLock":
-            common_page.typeDataForInputField(loginPage_selectors.passwordInputField, loginPage_data.passwordData.passwordInputIncorrectData.passwordInCapsLock);
-            break;
+        case "Space before Password":         
+        case "Space after Password":  
+        case "Password in Caps Lock":
         case "Password without last symbol":
-            common_page.typeDataForInputField(loginPage_selectors.passwordInputField, loginPage_data.passwordData.passwordInputIncorrectData.passwordWithoutLastSymbol);
-            break;
         case "Password without first symbol":
-            common_page.typeDataForInputField(loginPage_selectors.passwordInputField, loginPage_data.passwordData.passwordInputIncorrectData.passwordWithoutFirstSymbol);
+            common_page.typeDataForInputField(loginPage_selectors.passwordInputField, loginPage_data.passwordData.passwordInputIncorrectData[incorrectData]);
             break;
         default:
           throw new Error(`Unknown Password data is specified: ${passwordInputData}`);  
