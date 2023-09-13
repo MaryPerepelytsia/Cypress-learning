@@ -4,7 +4,9 @@
             "firstNameFieldForRegistration",
             "lastNameFieldForRegistration",
             "nickNameFieldForRegistration",
-            "emailFieldForRegistration"
+            "emailFieldForRegistration",
+            "passwordFieldForRegistration",
+            "confirmPasswordFieldForRegistration"
         ],
         "placeholdersInputFields": [
             "Имя",
@@ -13,6 +15,15 @@
             "Email"
         ]
     },
+
+    "registrationInputFieldsData": [
+        "TestName",
+        "TestLastName",
+        "TestNickName",
+        "test@gmail.com",
+        "qwertyui1!",
+        "qwertyui1!"
+    ],
 
     "checkBoxData": [
         "receiveNewsletterCheckBoxForRegistration",
