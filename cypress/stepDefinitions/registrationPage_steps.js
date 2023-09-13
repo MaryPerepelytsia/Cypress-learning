@@ -56,7 +56,7 @@ When("I fill in the {string} field on the 'Registration' page with Correct data"
         default:
           throw new Error('Unknown input field name is specified: ${inputFieldName}');  
   }
-})
+});
 
 Then("I should see that Placeholders are correct for all input fields on the 'Registration' page", () => {
    for (let i = 0; i < registrationPage_data.placeholdersData.placeholdersInputFields.length; i++) {
@@ -74,4 +74,12 @@ Then("I should see that Placeholders are correct for all input fields on the 'Re
    }
   });
 
+Then("I accept all registration rules", () => {
+    for (let i = 0; i < registrationPage_data.checkBoxData.length; i++) {
+     const selector = registrationPage_data.checkBoxData[i];
+     cy.log("selector = " + selector)
+
+     cy.get(registrationPage_selectors[selector]).click();
+     }
+});
  
