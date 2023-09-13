@@ -13,5 +13,4 @@ Scenario: Verify registration with valid credentials
     And I fill in the "First Name" field on the 'Registration' page with Correct data
     And I fill in the "Last Name" field on the 'Registration' page with Correct data
     And I fill in the "Nick Name" field on the 'Registration' page with Correct data
-    # And I accept all registration rules
- 
+    And I accept all registration rules
