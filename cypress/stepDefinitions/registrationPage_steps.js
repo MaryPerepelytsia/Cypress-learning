@@ -58,15 +58,15 @@ When("I fill in the {string} field on the 'Registration' page with Correct data"
   }
 });
 
-Then("I should see that Placeholders are correct for all input fields on the 'Registration' page", () => {
+Then("I should see that Placeholders are correct for Four input fields on the 'Registration' page", () => {
    for (let i = 0; i < registrationPage_data.placeholdersData.placeholdersInputFields.length; i++) {
    
     const selector = registrationPage_data.placeholdersData.placeholdersSelectors[i];
     const expectedPlaceholders = registrationPage_data.placeholdersData.placeholdersInputFields[i];
 
-    cy.log("i = " + i)
-    cy.log("selector = " + selector)
-    cy.log("expectedPlaceholders = " + expectedPlaceholders)
+    // cy.log("i = " + i)
+    // cy.log("selector = " + selector)
+    // cy.log("expectedPlaceholders = " + expectedPlaceholders)
 
     cy.get(registrationPage_selectors[selector])
       .should("have.attr", "placeholder")
@@ -77,9 +77,20 @@ Then("I should see that Placeholders are correct for all input fields on the 'Re
 Then("I accept all registration rules", () => {
     for (let i = 0; i < registrationPage_data.checkBoxData.length; i++) {
      const selector = registrationPage_data.checkBoxData[i];
-     cy.log("selector = " + selector)
+    //  cy.log("selector = " + selector)
 
      cy.get(registrationPage_selectors[selector]).click();
      }
+});
+
+Then("I fill in six registration input fields", () => {
+    for (let i = 0; i < registrationPage_data.placeholdersData.placeholdersSelectors.length; i++) {
+     const selector = registrationPage_data.placeholdersData.placeholdersSelectors[i];
+     const inputData = registrationPage_data.registrationInputFieldsData[i];
+    //  cy.log("selector = " + selector)
+    //  cy.log("inputData = " + inputData)
+
+    cy.get(registrationPage_selectors[selector]).clear().type(inputData);
+    }
 });
  
