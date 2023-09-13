@@ -57,3 +57,21 @@ When("I fill in the {string} field on the 'Registration' page with Correct data"
           throw new Error('Unknown input field name is specified: ${inputFieldName}');  
   }
 })
+
+Then("I should see that Placeholders are correct for all input fields on the 'Registration' page", () => {
+   for (let i = 0; i < registrationPage_data.placeholdersData.placeholdersInputFields.length; i++) {
+   
+    const selector = registrationPage_data.placeholdersData.placeholdersSelectors[i];
+    const expectedPlaceholders = registrationPage_data.placeholdersData.placeholdersInputFields[i];
+
+    cy.log("i = " + i)
+    cy.log("selector = " + selector)
+    cy.log("expectedPlaceholders = " + expectedPlaceholders)
+
+    cy.get(registrationPage_selectors[selector])
+      .should("have.attr", "placeholder")
+      .and("equal", expectedPlaceholders);
+   }
+  });
+
+ 

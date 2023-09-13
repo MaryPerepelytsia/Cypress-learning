@@ -1,4 +1,19 @@
 {
+    "placeholdersData": {
+        "placeholdersSelectors": [
+            "firstNameFieldForRegistration",
+            "lastNameFieldForRegistration",
+            "nickNameFieldForRegistration",
+            "emailFieldForRegistration"
+        ],
+        "placeholdersInputFields": [
+            "Имя",
+            "Фамилия",
+            "Никнейм",
+            "Email"
+        ]
+    },
+
     "nickNameData": {
       "incorrectNickNameData": {
         "nameInput1symbols": "a",
