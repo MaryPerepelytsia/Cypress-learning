@@ -1,7 +1,7 @@
 
 {
     "homePageURL" : "https://bloomenty.com/nl/home",
-    "vacanciesPageURL" : "https://bloomenty.com/nl/vacancies",
+    "vacanciesPageURL" : "https://bloomenty.com/ru/vacancies",
     "registrationPageURL" : "https://bloomenty.com/ru/registration",
     "loginPageURL": "https://bloomenty.com/nl/myaccount/login"
  }
