@@ -11,4 +11,5 @@ export default class RegistrationPage_selectors {
     countryFieldForRegistration = ".nice-select";
     receiveNewsletterCheckBoxForRegistration = "#user_registration_isSubscribed";
     agreementCheckBoxForRegistration = "#agreement";
+    countryDropdownForRegistration = ".nice-select";
   }

@@ -59,10 +59,10 @@ When("I fill in the {string} field on the 'Registration' page with Correct data"
 });
 
 Then("I should see that Placeholders are correct for Four input fields on the 'Registration' page", () => {
-   for (let i = 0; i < registrationPage_data.placeholdersData.placeholdersInputFields.length; i++) {
+   for (let i = 0; i < registrationPage_data.registrationPageData.placeholdersInputFields.length; i++) {
    
-    const selector = registrationPage_data.placeholdersData.placeholdersSelectors[i];
-    const expectedPlaceholders = registrationPage_data.placeholdersData.placeholdersInputFields[i];
+    const selector = registrationPage_data.registrationPageData.placeholdersSelectors[i];
+    const expectedPlaceholders = registrationPage_data.registrationPageData.placeholdersInputFields[i];
 
     // cy.log("i = " + i)
     // cy.log("selector = " + selector)
@@ -84,8 +84,8 @@ Then("I accept all registration rules", () => {
 });
 
 Then("I fill in six registration input fields", () => {
-    for (let i = 0; i < registrationPage_data.placeholdersData.placeholdersSelectors.length; i++) {
-     const selector = registrationPage_data.placeholdersData.placeholdersSelectors[i];
+    for (let i = 0; i < registrationPage_data.registrationPageData.placeholdersSelectors.length; i++) {
+     const selector = registrationPage_data.registrationPageData.placeholdersSelectors[i];
      const inputData = registrationPage_data.registrationInputFieldsData[i];
     //  cy.log("selector = " + selector)
     //  cy.log("inputData = " + inputData)
@@ -93,4 +93,16 @@ Then("I fill in six registration input fields", () => {
     cy.get(registrationPage_selectors[selector]).clear().type(inputData);
     }
 });
+
+Then("I should see that the data for 'Country' dropdown are correct", () => {
+    for (let i = 0; i < registrationPage_data.registrationPageData.dropdownData.length; i++) {
+     const dropdownData = registrationPage_data.registrationPageData.dropdownData[i];
+     
+    //  cy.log("selector = " + selector)
+    //  cy.log("inputData = " + inputData)
+
+    cy.get(registrationPage_selectors.countryDropdownForRegistration).contains(dropdownData);
+    }
+});
+
  

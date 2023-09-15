@@ -1,5 +1,5 @@
 {
-    "placeholdersData": {
+    "registrationPageData": {
         "placeholdersSelectors": [
             "firstNameFieldForRegistration",
             "lastNameFieldForRegistration",
@@ -13,6 +13,16 @@
             "Фамилия",
             "Никнейм",
             "Email"
+        ],
+        "dropdownData": [
+            "Австралия",
+            "Бельгия",
+            "Канада",
+            "Дания",
+            "Германия",
+            "Франция",
+            "Греция",
+            "Великобритания"
         ]
     },
 

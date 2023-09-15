@@ -5,6 +5,7 @@ Scenario: Verify Placeholders on Registration page
     And I wait for "3" seconds
     And I press "Accept" button on the 'Cookies' page
     Then I should see that Placeholders are correct for Four input fields on the 'Registration' page
+    And I should see that the data for 'Country' dropdown are correct
 
 Scenario: Verify registration with valid credentials
     When I navigate to "Registration" page
