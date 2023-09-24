@@ -15,25 +15,14 @@ before(() => {
     cy.fixture("/registrationPage.json").then((registrationInputFieldsDataFile) => {
         registrationPage_data = registrationInputFieldsDataFile;
     });
-  }); 
-
-before(() => {
     cy.fixture("/cookiesPage.json").then((pageDataFile) => {
         cookiesPage_data = pageDataFile;
     });
-  });  
-
-before(() => {
     cy.fixture("/loginPage.json").then((loginDataFile) => {
-      loginPage_data = loginDataFile;
-    });
-  });  
-
-before(() => {
-
-    // cy.visit('https://bloomenty.com/nl/home');
+        loginPage_data = loginDataFile;
+      });
     cy.session('cookie', () =>{});
-  });
+  }); 
 
 When("I fill in the {string} field on the 'Registration' page with Correct data", (inputFieldName) => {
     const selector = common_page.removeSpaceAndApplyCamelCase(inputFieldName, "", "FieldForRegistration");
