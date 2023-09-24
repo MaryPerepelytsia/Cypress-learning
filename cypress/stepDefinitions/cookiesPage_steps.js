@@ -11,16 +11,11 @@ let cookiesPage_data; //Used as link to the fixxtures data.
 
 before(() => {
     cy.fixture("/cookiesPage.json").then((cookiesDataFile) => {
-      cookiesPage_data = cookiesDataFile;
+      cookiesPage_data = cookiesDataFile;  
     });
-  });  
-
-before(() => {
-
     cy.visit('https://bloomenty.com/nl/home');
     cy.session('cookie', () =>{});
-  
-  });
+});  
 
 Then("I should see 'Cookies' page", () => {
     homePagePage.checkCookiesPageIsVisible();

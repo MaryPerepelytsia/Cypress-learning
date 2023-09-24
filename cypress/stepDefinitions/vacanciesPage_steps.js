@@ -21,19 +21,11 @@ before(() => {
     cy.fixture("/cookiesPage.json").then((pageDataFile) => {
         cookiesPage_data = pageDataFile;
     });
-  });  
-
-before(() => {
     cy.fixture("/vacanciesPage.json").then((vacanciesDataFile) => {
-      vacanciesPage_data = vacanciesDataFile;
-    });
-  });  
-
-before(() => {
-
-    // cy.visit('https://bloomenty.com/nl/home');
+        vacanciesPage_data = vacanciesDataFile;
+      });
     cy.session('cookie', () =>{});
-  });
+  });  
 
 Then("I should see that the data for 'Vacancies' dropdown are correct", () => {
     for (let i = 0; i < vacanciesPage_data.vacanciesDropdownData.length; i++) {

@@ -7,7 +7,6 @@ before(() => {
 
     cy.visit('https://bloomenty.com/nl/home');
     cy.session('cookie', () =>{});
-  
   });
 
 When("I click 'Accept' button", () => {

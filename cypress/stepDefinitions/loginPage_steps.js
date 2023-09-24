@@ -12,19 +12,12 @@ before(() => {
     cy.fixture("/cookiesPage.json").then((pageDataFile) => {
         cookiesPage_data = pageDataFile;
     });
-  });  
-
-before(() => {
     cy.fixture("/loginPage.json").then((loginDataFile) => {
-      loginPage_data = loginDataFile;
-    });
-  });  
-
-before(() => {
-
+        loginPage_data = loginDataFile;
+      });
     // cy.visit('https://bloomenty.com/nl/home');
     cy.session('cookie', () =>{});
-  });
+  }); 
 
 Then("I should see that 'Login' page is displayed", () => {
     cy.get(loginPage_selectors.loginPage).should("be.visible")
