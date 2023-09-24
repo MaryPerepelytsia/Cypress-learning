@@ -40,15 +40,32 @@ Then("I should see 'Accept' button", () => {
 Then("I should see 'Not Accept' button", () => {
   cy.get(cookiesPage_selectors.notAcceptButton).should("be.visible")
 });
+ 
 
-When("I should see that 'Cookies' page is displayed", () => {
-    homePagePage.checkCookiesPageIsVisible();
-  });
+When("I should see that 'Cookies' page is {string}", (visibility) => {
+      switch (visibility) {
+        case "Displayed":  
+            homePagePage.checkCookiesPageVisibility(true);  
+            break;      
+        case "Not displayed":            
+            homePagePage.checkCookiesPageVisibility(false);
+            break;
+        default:
+          throw new Error(`Unknown button name is specified: ${buttonName}`);  
+  }
+})
+
+
+// When("I should see that 'Cookies' page is displayed", () => {
+//     homePagePage.checkCookiesPageIsVisible();
+//   });
   
-When("I should see that 'Cookies' page is Not displayed", () => {
-    homePagePage.checkCookiesPageIsNotVisible();
-  });
+// When("I should see that 'Cookies' page is Not displayed", () => {
+//     homePagePage.checkCookiesPageIsNotVisible();
+//   });
+ 
   
+
 When("I should see that 'Cookies rules' is opened", () => {
     cy.get(cookiesPage_selectors.cookiesRules).should("be.visible")
   });

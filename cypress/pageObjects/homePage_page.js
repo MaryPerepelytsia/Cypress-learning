@@ -8,4 +8,11 @@ export default class HomePagePageObj {
       cy.get("#cookies").should("not.be.visible")
     }
   
+    checkCookiesPageVisibility(status) {
+        if (status == true) {
+          cy.get("#cookies").should("be.visible");
+        } else {
+          cy.get("#cookies").should("not.be.visible");
+        }
+      }
   }
