@@ -6,6 +6,6 @@ Scenario: Verify 'Vacancies' dropdown on Vacancies page
     And I press "Accept" button on the 'Cookies' page
     Then I should see that the data for 'Vacancies' dropdown are correct
 
-Scenario: Verify "Services" sub-menu from Header
-    When I navigate to "Vacancies" page 
+# Scenario: Verify "Services" sub-menu from Header
+#     When I navigate to "Vacancies" page 
 

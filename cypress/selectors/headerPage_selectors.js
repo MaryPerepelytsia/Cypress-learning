@@ -5,20 +5,15 @@ export default class HeaderPage_selectors {
     encyclopediaMenu = "[data-cy=headerEncyclopediaMenu]"
     aboutUsMenu = "#headerAboutUsMenu"
     vacanciesSubMenu = "[data-cy=headerServicesVacanciesSubMenu]"
+    blogSubMenu = "[data-cy=headerServicesBlogSubMenu]"
+    newsSubMenu = "[data-cy=headerServicesNewsSubMenu]"
     
-    
-    headerLogo = "[data-cy=headerLogo]"
-    headerServicesMenu = "[data-cy=headerServicesMenu]"
-    headerEncyclopediaMenu = "[data-cy=headerEncyclopediaMenu]"
-    headerForumMenu = "[data-cy=headerForumMenu]"
-    headerAboutUsMenu = "#headerAboutUsMenu"
-    headerActiveLanguageMenu = "[data-cy=activeLanguage]"
-    headerServicesVacanciesSubMenu = "[data-cy=headerServicesVacanciesSubMenu]"
-    headerServicesTravelClubSubMenu = "[data-cy=headerServicesTravelClubSubMenu]"
-    headerServicesNewsSubMenu = "[data-cy=headerServicesNewsSubMenu]"
-    headerServicesBlogSubMenu = "[data-cy=headerServicesBlogSubMenu]"
-    headerLoginButton = '[data-cy="headerLoginButton"]'
-    headerLogoutButton = "[data-cy=headerMyAccountAvatarLogoutSubMenu]"
+    logo = "[data-cy=headerLogo]"
+    forumMenu = "[data-cy=headerForumMenu]"
+    aboutUsMenu = "#headerAboutUsMenu"
+    activeLanguageMenu = "[data-cy=activeLanguage]"
+    loginButton = '[data-cy="headerLoginButton"]'
+    logoutButton = "[data-cy=headerMyAccountAvatarLogoutSubMenu]"
   }
   
   

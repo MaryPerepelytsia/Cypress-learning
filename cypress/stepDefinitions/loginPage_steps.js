@@ -85,7 +85,8 @@ When("I navigate to {string} page", (pageURLData) => {
         case "Login":
         case "Home":
         case "Vacancies":
-        case "Registration":          
+        case "Registration":
+        case "Farmer form":          
             cy.visit(cookiesPage_data[dataURL]);
             break;
         default:
