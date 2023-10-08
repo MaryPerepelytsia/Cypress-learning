@@ -18,14 +18,22 @@ When("I should see that {string} input field is {string} for 'Farmer' form", (in
     }
   });
 
-When("I click {string} for 'Country' radiobutton", (radioButtonName) => {
-    const selector = common_page.removeSpaceAndApplyCamelCase(radioButtonName, "", "RadioButtonForSupply");
-    switch (radioButtonName) {
-      case "Ja":       
-      case "Nee":            
-          cy.get(farmersPage_selectors[selector]).click();
-          break;
-      default:
-        throw new Error(`Unknown radiobutton name is specified: ${radioButtonName}`);  
-}
-})
+// When("I click {string} for 'Country' radiobutton", (radioButtonName) => {
+//     const selector = common_page.removeSpaceAndApplyCamelCase(radioButtonName, "", "RadioButtonForSupply");
+//     switch (radioButtonName) {
+//       case "Ja":       
+//       case "Nee":            
+//           cy.get(farmersPage_selectors[selector]).click();
+//           break;
+//       default:
+//         throw new Error(`Unknown radiobutton name is specified: ${radioButtonName}`);  
+// }
+// })
+
+Then("I click 'Ja' for 'Country' radiobutton", () => {
+    cy.get(farmersPage_selectors.jaRadioButtonForSupply).click()
+  });
+
+Then("I click 'Nee' for 'Country' radiobutton", () => {
+    cy.get(farmersPage_selectors.neeRadioButtonForSupply).click()
+  });
