@@ -6,6 +6,7 @@ export default class LoginPage_selectors {
     emailInputField = "[data-cy=emailInputField]";
     passwordInputField = "[data-cy=passwordInputField]";
     loginButtonOnLoginPage = "[data-cy=loginFormSubmitButton]";
+    logoutButtonInHeader = "[data-cy=headerMyAccountAvatarLogoutSubMenu]";
     myProfileTitle = ".title-icon > .title";
     invalidEmailAddressOrPassword = ".alert";
     myProfileAvatar = ".header-user-image > img";

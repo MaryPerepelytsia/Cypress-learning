@@ -108,17 +108,30 @@ When("I should see that {string} field is displayed", (fieldOnLoginPage) => {
   }
 })
 
+When("I press 'Logout' button on the 'My profile' page", () => {
+    cy.get(loginPage_selectors.logoutButtonInHeader).click({force: true});
+  });
 
+When("I press 'Enter' key on the keyboard", () => {
+    cy.get(loginPage_selectors.passwordInputField).type('{enter}');
+  });
 
-
-
-
-
-
-
-
+When("I input 'АВСD' symbols in the 'Email' field on the 'Login' page", () => {
+    cy.get(loginPage_selectors.emailInputField).type('ABCD');
+  });
   
+When("I press 'Delete' key on the keyboard two times", () => {
+    cy.get(loginPage_selectors.emailInputField).type('{leftArrow}').type('{leftArrow}').type('{del}').type('{del}');
+  });
 
-  
+// When("I should see that 'АВ' symbols is displayed in the 'Email' field on the 'Login' page", () => {
+//     cy.get(loginPage_selectors.emailInputField).should("contain","AB"); 
+//   });
 
-  
+// Then("I should see that 'АВ' symbols is displayed in the 'Email' field on the 'Login' page", () => {
+//     cy.get(loginPage_selectors.emailInputField).contains("AB"); 
+//   });
+
+When("I should see that 'АВ' symbols is displayed in the 'Email' field on the 'Login' page", () => {
+    cy.get(loginPage_selectors.emailInputField).should('have.value', 'AB'); 
+  });
