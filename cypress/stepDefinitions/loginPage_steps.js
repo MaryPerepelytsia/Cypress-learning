@@ -117,11 +117,75 @@ When("I press 'Enter' key on the keyboard", () => {
   });
 
 When("I input 'АВСD' symbols in the 'Email' field on the 'Login' page", () => {
-    cy.get(loginPage_selectors.emailInputField).type('ABCD');
+    cy.get(loginPage_selectors.emailInputField).clear().type('ABCD');
   });
   
-When("I press 'Delete' key on the keyboard two times", () => {
-    cy.get(loginPage_selectors.emailInputField).type('{leftArrow}').type('{leftArrow}').type('{del}').type('{del}');
+// When("I press 'Delete' key on the keyboard while cursor is in the 'Email' field", () => {
+//     cy.get(loginPage_selectors.emailInputField).type('{del}');
+//   });
+
+ When("I press {string} key on the keyboard while cursor is in the {string} field", (keyName, fieldName) => {
+    switch (fieldName) {
+      case "Email":
+        switch (keyName) {
+            case "Delete":
+                cy.get(loginPage_selectors.emailInputField).type('{del}');
+                break;
+            case "Backspace":
+                cy.get(loginPage_selectors.emailInputField).type('{backspace}');
+                break;
+            default:
+                throw new Error(`Unknown direction is specified: ${keyName}`);
+        }
+        break;
+      case "Password":
+        switch (keyName) {
+            case "Delete":
+                cy.get(loginPage_selectors.passwordInputField).type('{del}');
+                break;
+            case "Backspace":
+                cy.get(loginPage_selectors.passwordInputField).type('{backspace}');
+                break;
+            default:
+                throw new Error(`Unknown direction is specified: ${keyName}`);
+        }
+        break;
+      default:
+        throw new Error(`Unknown field name is specified: ${fieldName}`);
+    }
+  });
+
+
+
+ When("I shift the cursor {string} in the {string} field", (direction, fieldName) => {
+    switch (fieldName) {
+      case "Email":
+        switch (direction) {
+            case "left":
+                cy.get(loginPage_selectors.emailInputField).type('{leftArrow}');
+                break;
+            case "right":
+                cy.get(loginPage_selectors.emailInputField).type('{rightarrow}');
+                break;
+            default:
+                throw new Error(`Unknown direction is specified: ${direction}`);
+        }
+        break;
+      case "Password":
+        switch (direction) {
+            case "left":
+                cy.get(loginPage_selectors.passwordInputField).type('{leftArrow}');
+                break;
+            case "right":
+                cy.get(loginPage_selectors.passwordInputField).type('{rightarrow}');
+                break;
+            default:
+                throw new Error(`Unknown direction is specified: ${direction}`);
+        }
+        break;
+      default:
+        throw new Error(`Unknown field name is specified: ${fieldName}`);
+    }
   });
 
 // When("I should see that 'АВ' symbols is displayed in the 'Email' field on the 'Login' page", () => {
