@@ -3,12 +3,6 @@ import HomePage_selectors from "../selectors/homePage_selectors";
 
 const homePage_selectors = new HomePage_selectors;
 
-before(() => {
-
-    cy.visit('https://bloomenty.com/nl/home');
-    cy.session('cookie', () =>{});
-  });
-
 When("I click 'Accept' button", () => {
     cy.get(homePage_selectors.acceptCookiesButton).click();
   });

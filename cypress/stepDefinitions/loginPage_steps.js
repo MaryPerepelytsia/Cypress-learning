@@ -15,8 +15,6 @@ before(() => {
     cy.fixture("/loginPage.json").then((loginDataFile) => {
         loginPage_data = loginDataFile;
       });
-    // cy.visit('https://bloomenty.com/nl/home');
-    cy.session('cookie', () =>{});
   }); 
 
 Then("I should see that 'Login' page is displayed", () => {
